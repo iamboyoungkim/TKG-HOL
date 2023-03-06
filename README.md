@@ -9,19 +9,26 @@ Tanzu Kubernetes Grid Hands-On-Labs 페이지 입니다.
 
 ## 0. 환경 접속
 - 환경 설명
+
 ## 1. Cluster 생성 방법 알아보기
-- config 파일 설명
+- [config 파일 설명](tkg/configfile.md)
+
 ## 2. TKG Cli
-- workload cluster 생성해보기
-- scale out
+- [cli를 통한 클러스터 provisioning 및 scale](tkg/cli.md)
 - 업그레이드 
+
 ## 3. Kubernetes Resource 생성
-- Deployment
-- Service (Loadbalancer)
+- [Deployment](tkg/deployment.md)
+- [Service](tkg/service.md)
+
 ## 4. NSX Advanced LoadBalancer (AVI)
+
 ## 5. Package 배포
-- Cert Manager
-- Contour
-- Prometheus & Grafana
+- [Cert Manager](tkg/certmanager.md)
+- [Contour](tkg/contour.md)
+- [Prometheus & Grafana](tkg/prometheus_grafana.md)
+
 ## 6. 클러스터 삭제
+- [클러스터 삭제](tkg/deletion.md)
+
 ## 7. 클러스터 관리 (Tanzu Mission Control)
