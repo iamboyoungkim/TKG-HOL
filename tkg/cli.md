@@ -1,43 +1,49 @@
 cli 사용해서 클려스터 provisioning/scale
 
-## CLI를 사용하여 클러스터 배포, Scaling
+# CLI를 사용하여 클러스터 배포, Scaling
 
 본 과정에서는 Tanzu CLI를 사용하여 TKG 클러스터를 배포하고 워크로드 및 컨트롤 플레인 노드를 Scailing 하는 법에 대하여 설명합니다.
 
-### 1. 클러스터 목록 확인
+## 1. 클러스터 목록 확인
+### 1. Tanzu 세션 로그인
 
-실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면 tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다.
+실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다.
 ```cmd
 $ tanzu login
 ? Select a server
 > tap-mgmt-01
 ```
-그 다음, tanzu cluster list 를 수행해 현재 실행되고 있는 클러스터가 있는지 조회합니다.
+### 2.Tanzu Cluster List 확인
+Tanzu cluster list 를 수행해 현재 실행되고 있는 클러스터가 있는지 조회합니다.
 
 > 클러스터 목록 조회
 ```cmd
 tanzu cluster list
 ```
+만일 클러스터가 이전에 배포되었을 경우, 다음과 같은 화면이 출력됩니다.
+
+<img width="1062" alt="Screenshot 2023-03-08 at 1 54 01 PM" src="https://user-images.githubusercontent.com/30145956/223631937-79a3f4c0-1f31-42a9-9ce9-f4881b1fe627.png">
 
 > 컨트롤 플레인을 포함한 클러스터 목록 조회
 ```cmd
 tanzu cluster list --include-management-cluster
 ```
-ㄷ
-다
-다으
-다음
-다음ㄱ
-다음고
-다음과
+컨트롤 플레인을 포함한 클러스터가 이전에 배포되었을 경우, 다음과 같은 화면이 출력됩니다.
+
+<img width="1490" alt="Screenshot 2023-03-08 at 1 54 10 PM" src="https://user-images.githubusercontent.com/30145956/223641030-b30ad5ab-9b91-4db5-ac86-c847da9a4a02.png">
+
+## 2. mgmt cluster config 파일을 사용하여 클러스터 생성
+
+클러스터를 생성하려면 Tanzu CLI 에서 생성된 Management Cluster Config 파일을 복제하고, 편집하여 생성합니다.
+Management Cluster Config 파일은 ~/.config/tanzu/tkg/clusterconfig 위치에 있습니다.
+
+```cmd
+cd  ~/.config/tanzu/tkg/clusterconfig
+```
+ㅇ
 
 
-<img width="1062" alt="Screenshot 2023-03-08 at 1 54 01 PM" src="https://user-images.githubusercontent.com/30145956/223631937-79a3f4c0-1f31-42a9-9ce9-f4881b1fe627.png">
-
-
-tanzu cluster list --include-management-cluster
-리스트 조회하고
-
+-----------
 
 클러스터 생성 하려면 기존 mgmt cluster configfile 복제해서 써야한다.
 
