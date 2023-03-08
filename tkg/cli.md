@@ -102,6 +102,6 @@ tanzu cluster scale cluster_name -c 3 -w 5
 tanzu cluster list 를 통하여 test-work 클러스터의 워커 노드가 5개로 확장된 것을 확인할 수가 있습니다.
 클러스터가 성공적으로 scale 되어 running 상태임을 확인 후 다음 단계로 이동합니다.
 
-  <img width="1075" alt="Screenshot 2023-03-08 at 2 06 52 PM (2) copy 2" src="https://user-images.githubusercontent.com/30145956/223748412-8c9e1d27-ca2f-4493-90a2-5762a4864fe4.png">
-  
-  
+<img width="1075" alt="Screenshot 2023-03-08 at 2 09 38 PM (2)" src="https://user-images.githubusercontent.com/30145956/223749660-8fa46d18-774a-4dee-9b6b-cf77677d1ef4.png">
+
+
