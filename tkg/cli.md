@@ -4,6 +4,8 @@ cli 사용해서 클려스터 provisioning/scale
 
 본 과정에서는 Tanzu CLI를 사용하여 TKG 클러스터를 배포하고 워크로드 및 컨트롤 플레인 노드를 Scailing 하는 법에 대하여 설명합니다.
 
+
+
 ## 1. 클러스터 목록 확인
 ### 1. Tanzu 세션 로그인
 
@@ -69,7 +71,7 @@ vi 등의 편집기로 복제하 파일을 편집합니다. 다음과 같이 변
 
 <img width="797" alt="Screenshot 2023-03-08 at 1 55 09 PM (3)" src="https://user-images.githubusercontent.com/30145956/223735988-20ec95de-98a1-4ad4-844a-9831919905b0.png">
 
-<img width="796" alt="Screenshot 2023-03-08 at 2 05 36 PM (3)" src="https://user-images.githubusercontent.com/30145956/223735950-44b7126b-8429-48d2-878d-c58896e66320.png">
+<img width="796" alt="Screenshot 2023-03-08 at 2 05 36 PM (3) copy" src="https://user-images.githubusercontent.com/30145956/223736509-81d6c317-0080-4931-865c-58e72e4c791e.png">
 
 
 ### 3. 클러스터 생성
@@ -79,31 +81,27 @@ vi 등의 편집기로 복제하 파일을 편집합니다. 다음과 같이 변
 ```cmd
 tanzu cluster create -f <파일명> -v 6 
 ```
-<img width="1489" alt="Screenshot 2023-03-08 at 1 57 34 PM (2) copy 2" src="https://user-images.githubusercontent.com/30145956/223667436-8a00c580-c83a-4ea5-92e4-f1b828c2bef4.png">
-<img width="1491" alt="Screenshot 2023-03-08 at 2 05 21 PM (2)" src="https://user-images.githubusercontent.com/30145956/223667750-1c4576d2-cc70-43eb-9699-6d1df85c587d.png">
+<img width="969" alt="Screenshot 2023-03-08 at 1 57 34 PM (2) copy 3" src="https://user-images.githubusercontent.com/30145956/223739609-062073c9-6601-444d-b883-6a1015ad5618.png">
+<img width="970" alt="Screenshot 2023-03-08 at 2 05 21 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223739632-9defdab3-c1bc-4818-878c-ae312a475471.png">
 
+## 3. 클러스터 노드 수 Scaling 작업
+클러스터 생성 후, tanzu cluster list 로 생성된 클러스터를 조회합니다. test-work 클러스터느 현재 3개의 컨트롤 플레인 수, 3개의 워커 노드 수를 가지고 있습니다.
 
-  
-------
+```cmd
+tanzu cluster list
+```
 
-클러스터 생성 하려면 기존 mgmt cluster configfile 복제해서 써야한다.
+<img width="1125" alt="Screenshot 2023-03-08 at 2 06 52 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223747688-b9843f7e-a736-4986-8592-5574ba028c56.png">
 
-~/.config/tanzu/tkg/clusterconfigs 하에 있음
-cp 로 복사해가지고 파일만들고
-
-CLUSTER_NAME 이랑 리소스들 작게 변경해서
-
-tanzu cluster create -f <파일명> -v 6 으로 생성
-
-
-
-### 2. TKG Workload Cluster scale
-워크로드 클러스터를 수평으로 확장하려면 'tanzu cluster scale' 명령을 사용합니다.
+워크로드 클러스터를 수평으로 확장하려면 'tanzu cluster scale' 명령을 사용합니다. 
 -c 옵션으로 컨트롤 플레인 노드 수를 변경하며, -w 옵션을 지정하여 워크로드 노드 수를 변경합니다.
-~~~
+> 컨트롤 플레인 노드 수 3개, 워커 노드 수 5개 노드 설정
+```cmd
 tanzu cluster scale cluster_name -c 3 -w 5
-~~~
+```
+tanzu cluster list 를 통하여 test-work 클러스터의 워커 노드가 5개로 확장된 것을 확인할 수가 있습니다.
+클러스터가 성공적으로 scale 되어 running 상태임을 확인 후 다음 단계로 이동합니다.
 
-이후 다시 tanzu cluster list 를 수행해 클러스터가 성공적으로 scale 되어 running 상태임을 확인 후 다음 단계로 이동합니다.
-
-
+  <img width="1075" alt="Screenshot 2023-03-08 at 2 06 52 PM (2) copy 2" src="https://user-images.githubusercontent.com/30145956/223748412-8c9e1d27-ca2f-4493-90a2-5762a4864fe4.png">
+  
+  
