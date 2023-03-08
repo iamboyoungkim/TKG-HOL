@@ -80,4 +80,8 @@ k get svc 로 실행되고 있는 서비스를 확인합니다. 또한 접속할
 
 <img width="1120" alt="Screenshot 2023-03-08 at 2 17 19 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223763893-4b7e4b72-5554-4158-bbb8-c772339fa7b8.png">
 
+브라우저를 사용하여 <nginx node의 INTERNAL-IP>:<nodeport 포트 번호> 로 접속을 진행하면 nginx 서버를 확인할 수가 있습니다.
+
+<img width="1105" alt="Screenshot 2023-03-08 at 2 17 11 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223770646-487d1e06-f626-428c-a3be-616a045973e3.png">
+
 
