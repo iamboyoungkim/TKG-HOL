@@ -1,6 +1,6 @@
 # 서비스 생성 작업 (Nodeport / LoadBalancer)
 
-파드의 애플리케이션을 네트워크에 노출시키는 서비스를 생성을 한 뒤 접속하는 방법에 대해 설명합니다.
+Pod의 애플리케이션을 네트워크에 노출시키는 서비스를 생성을 한 뒤 접속하는 방법에 대해 설명합니다.
 
 ## 1. nodeport.yaml 생성, 배포
 deployment.yaml 로 생성된 nginx pod를 외부 ip 및 포트로 노출시키는 nodeport.yaml 서비스를 생성 및 배포합니다. (설명 맞나요...?)
