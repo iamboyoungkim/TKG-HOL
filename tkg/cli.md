@@ -34,16 +34,56 @@ tanzu cluster list --include-management-cluster
 
 ## 2. mgmt cluster config 파일을 사용하여 클러스터 생성
 
+### 1. mgmt cluster config 파일 복제
+
 클러스터를 생성하려면 Tanzu CLI 에서 생성된 Management Cluster Config 파일을 복제하고, 편집하여 생성합니다.
-Management Cluster Config 파일은 ~/.config/tanzu/tkg/clusterconfig 위치에 있습니다.
+Management Cluster Config 파일은 ~/.config/tanzu/tkg/clusterconfig 위치에 있습니다. 
+
 
 ```cmd
 cd  ~/.config/tanzu/tkg/clusterconfig
+ls -al
 ```
-ㅇ
+
+그 중 UI installer 설치 시, 생성되었던 무작위 이름의 YAML 파일을 복제하여 새로운 이름으로 파일을 생성합니다. <자동생성파일명> 를 생성된 mgmt cluster config 파일 이름으로 대체합니다. <파일명> 에 지정하고자 하는 파일 이름을 적습니다. 
+
+```cmd
+cp  <자동생성파일명>.yaml <파일명>.yaml
+```
+
+<img width="690" alt="Screenshot 2023-03-08 at 1 57 34 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223652351-3f06fca6-4a7d-44b9-8cf0-8bc1a42ce6d8.png">
+  
+### 2. mgmt cluster config 복제 파일 편집
+
+vi 등의 편집기로 복제하 파일을 편집합니다. 다음과 같이 변수명을 설정합니다.
+  
+|변수명|지정값|
+|------|---|
+|CLUSTER_NAME|지정하고자 하는 클러스터 이름|
+|VSPHERE_CONTROL_PLANE_DISK_GIB|20|
+|VSPHERE_CONTROL_PLANE_MEM_GIB|4|
+|VSPHERE_CONTROL_PLANE_NUM_CPUS|2|
+|VSPHERE_WORKER_DISK_GIB|20|
+|VSPHERE_WORKER_MEM_GIB|4|
+|VSPHERE_WORKER_NUM_CPUS|2|
+
+<img width="1493" alt="Screenshot 2023-03-08 at 1 55 09 PM (2)" src="https://user-images.githubusercontent.com/30145956/223660055-f497ca46-f2ae-410c-9633-c04e2acffc32.png">
+
+<img width="1493" alt="Screenshot 2023-03-08 at 2 05 36 PM (2)" src="https://user-images.githubusercontent.com/30145956/223660131-64805d7c-4ea4-4827-a197-bcb91262bc29.png">
+
+### 3. 클러스터 생성
+
+이후 tanzu cluster create -f <파일명> -v 6 으로 클러스터를 생성해 줍니다. -v 는 생성 시 로그의 상세도 (0~9)를 나타냅니다.
+
+```cmd
+tanzu cluster create -f <파일명> -v 6 
+```
+<img width="1489" alt="Screenshot 2023-03-08 at 1 57 34 PM (2) copy 2" src="https://user-images.githubusercontent.com/30145956/223667436-8a00c580-c83a-4ea5-92e4-f1b828c2bef4.png">
+<img width="1491" alt="Screenshot 2023-03-08 at 2 05 21 PM (2)" src="https://user-images.githubusercontent.com/30145956/223667750-1c4576d2-cc70-43eb-9699-6d1df85c587d.png">
 
 
------------
+  
+------
 
 클러스터 생성 하려면 기존 mgmt cluster configfile 복제해서 써야한다.
 
