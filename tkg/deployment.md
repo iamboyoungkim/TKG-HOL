@@ -42,6 +42,4 @@ k apply -f deployment.yaml
 <img width="1000" alt="Screenshot 2023-03-08 at 2 11 38 PM (2)" src="https://user-images.githubusercontent.com/30145956/223756631-c52550b5-007f-462b-b78e-26bc46da8729.png">
 
 ## 3. nodeport.yaml 배포
-오
-외
-
+외부 ip 및 포트로
