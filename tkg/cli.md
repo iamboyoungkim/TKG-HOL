@@ -1,5 +1,6 @@
 cli 사용해서 클려스터 provisioning/scale
 
+tanzu cluster list --include-management-cluster
 
 
 
@@ -12,4 +13,5 @@ tanzu cluster scale cluster_name --controlplane-machine-count 5 --worker-machine
 ~~~
 
 이후 다시 tanzu cluster list 를 수행해 클러스터가 성공적으로 scale 되어 running 상태임을 확인 후 다음 단계로 이동합니다.
+
 
