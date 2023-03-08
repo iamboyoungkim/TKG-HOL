@@ -67,9 +67,10 @@ vi 등의 편집기로 복제하 파일을 편집합니다. 다음과 같이 변
 |VSPHERE_WORKER_MEM_GIB|4|
 |VSPHERE_WORKER_NUM_CPUS|2|
 
-<img width="1493" alt="Screenshot 2023-03-08 at 1 55 09 PM (2)" src="https://user-images.githubusercontent.com/30145956/223660055-f497ca46-f2ae-410c-9633-c04e2acffc32.png">
+<img width="797" alt="Screenshot 2023-03-08 at 1 55 09 PM (3)" src="https://user-images.githubusercontent.com/30145956/223735988-20ec95de-98a1-4ad4-844a-9831919905b0.png">
 
-<img width="1493" alt="Screenshot 2023-03-08 at 2 05 36 PM (2)" src="https://user-images.githubusercontent.com/30145956/223660131-64805d7c-4ea4-4827-a197-bcb91262bc29.png">
+<img width="796" alt="Screenshot 2023-03-08 at 2 05 36 PM (3)" src="https://user-images.githubusercontent.com/30145956/223735950-44b7126b-8429-48d2-878d-c58896e66320.png">
+
 
 ### 3. 클러스터 생성
 
