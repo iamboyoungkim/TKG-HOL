@@ -44,3 +44,5 @@ k get po
 ~~~
 
 <img width="1000" alt="Screenshot 2023-03-08 at 2 11 38 PM (2)" src="https://user-images.githubusercontent.com/30145956/223756631-c52550b5-007f-462b-b78e-26bc46da8729.png">
+
+nginx-deployment pod 3개가 생성된 것을 알 수가 있습니다.
