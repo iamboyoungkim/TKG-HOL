@@ -1,5 +1,3 @@
-cli 사용해서 클려스터 provisioning/scale
-
 # CLI를 사용하여 클러스터 배포, Scaling
 
 본 과정에서는 Tanzu CLI를 사용하여 TKG 클러스터를 배포하고 워크로드 및 컨트롤 플레인 노드를 Scailing 하는 법에 대하여 설명합니다.
@@ -9,7 +7,9 @@ cli 사용해서 클려스터 provisioning/scale
 ## 1. 클러스터 목록 확인
 ### 1. Tanzu 세션 로그인
 
-실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다. (처음 tanzu jumpbox 접속했을 때 매니지먼트 클러스터로 로그인 하는 것 맞나요?)
+실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다. 
+
+(처음 tanzu jumpbox 접속했을 때 매니지먼트 클러스터로 로그인 하는 것 맞나요?)
 ```cmd
 $ tanzu login
 ? Select a server
