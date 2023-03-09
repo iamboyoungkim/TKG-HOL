@@ -33,7 +33,9 @@ k apply -f nodeport.yaml 를 사용하여 NodePort 서비스를 생성합니다.
 k apply -f nodeport.yaml
 ~~~
 
-k get svc 로 실행되고 있는 서비스를 확인합니다. 또한 접속할 서비스 포트를 확인합니다. 해당 예시의 경우에는 포트 30929입니다. k get nodes -o wide 로 노드의 INTERNAL-IP 정보를 확인합니다.
+k get svc 로 실행되고 있는 서비스를 확인합니다. 또한 접속할 서비스 포트를 확인합니다. 해당 예시의 경우에는 포트 30929입니다. 
+
+k get nodes -o wide 로 노드의 INTERNAL-IP 정보를 확인합니다.
 
 ~~~
 k get svc
