@@ -11,12 +11,14 @@ tanzu cluster kubeconfig get <생성된클러스터이름> --admin
 
 <img width="1250" alt="Screenshot 2023-03-09 at 3 38 04 PM" src="https://user-images.githubusercontent.com/30145956/223940771-7c575056-b7e8-4328-828d-c59c34d2f2b3.png">
 
-kubectl config get-contexts 로 현재 context 를 확인합니다. 현재 환경에서는 tap-build-cluster-admin@tap-build-cluster 로 context가 지정되어 있습니다. ('*'로 표시)
+kubectl config get-contexts 로 현재 context 를 확인합니다. 현재 환경에서는 'tap-build-cluster-admin@tap-build-cluster' 로 context가 지정되어 있습니다. ('*'로 표시)
 ~~~
 kubectl config get-contexts
 ~~~
 <img width="1250" alt="Screenshot 2023-03-09 at 1 23 11 PM" src="https://user-images.githubusercontent.com/30145956/223924919-21b6e742-427b-477f-ad05-e5aa324fc409.png">
-이후, kubectl config use-context <생성한클러스터context> 이름으로 kubectl의 context를 변경합니다. 현재 환경에서는 kubectl config use-context test-work-admin@test-work 로 context 를 설정했습니다. 다시 kubectl config get-contexts 로 확인을 하면 워크로드 클러스터로 context 가 바뀐 것을 알 수가 있습니다.
+이후, kubectl config use-context <생성한클러스터context> 이름으로 kubectl의 context를 변경합니다. 현재 환경에서는 kubectl config use-context test-work-admin@test-work 로 context 를 설정했습니다. 
+
+다시 kubectl config get-contexts 로 확인을 하면 워크로드 클러스터로 context 가 바뀐 것을 알 수가 있습니다.
 
 ~~~
 kubectl config get-contexts <생성한클러스터context>
