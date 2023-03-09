@@ -4,7 +4,7 @@
 ## 0. kubectl context 를 워크로드로 포인트 설정
 
 워크로드 클러스터를 생성 후 nginx 웹 서버 pod를 배포하기 위해, kubectl context를 워크로드 클러스터로 포인트하도록 설정합니다.
-
+워크로드 클러스터를 
 
 <img width="1250" alt="Screenshot 2023-03-09 at 3 38 04 PM" src="https://user-images.githubusercontent.com/30145956/223940771-7c575056-b7e8-4328-828d-c59c34d2f2b3.png">
 
