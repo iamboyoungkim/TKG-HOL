@@ -39,11 +39,11 @@ tanzu cluster list --include-management-cluster
 ### 1. mgmt cluster config 파일 복제
 
 클러스터를 생성하려면 Tanzu CLI 에서 생성된 Management Cluster Config 파일을 복제하고, 편집하여 생성합니다.
-Management Cluster Config 파일은 ~/.config/tanzu/tkg/clusterconfig 위치에 있습니다. 
+Management Cluster Config 파일은 ~/.config/tanzu/tkg/clusterconfigs 위치에 있습니다. 
 
 
 ```cmd
-cd  ~/.config/tanzu/tkg/clusterconfig
+cd  ~/.config/tanzu/tkg/clusterconfigs
 ls -al
 ```
 
