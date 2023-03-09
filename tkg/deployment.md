@@ -2,7 +2,13 @@
 본 가이드는 TKG 클러스터 생성 후, 테스트 nginx 웹 서버를 배포하는 방법에 대하여 설명합니다.
 
 ## 0. kubectl context 를 워크로드로 포인트 설정
-nginx 웹 서버 pod를 배포하기 이전, kubectl context를 워크로드 클러스터로 포인트하도록 설정합니다. kubectl config get-contexts 로 현재 context 를 확인합니다. 현재 환경에서는 tap-build-cluster-admin@tap-build-cluster 로 context가 지정되어 있습니다. ('*'로 표시)
+
+워크로드 클러스터를 생성 후 nginx 웹 서버 pod를 배포하기 위해, kubectl context를 워크로드 클러스터로 포인트하도록 설정합니다.
+
+
+<img width="1250" alt="Screenshot 2023-03-09 at 3 38 04 PM" src="https://user-images.githubusercontent.com/30145956/223940771-7c575056-b7e8-4328-828d-c59c34d2f2b3.png">
+
+kubectl config get-contexts 로 현재 context 를 확인합니다. 현재 환경에서는 tap-build-cluster-admin@tap-build-cluster 로 context가 지정되어 있습니다. ('*'로 표시)
 ~~~
 kubectl config get-contexts
 ~~~
