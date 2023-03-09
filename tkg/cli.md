@@ -9,7 +9,7 @@ cli 사용해서 클려스터 provisioning/scale
 ## 1. 클러스터 목록 확인
 ### 1. Tanzu 세션 로그인
 
-실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다.
+실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다. (처음 tanzu jumpbox 접속했을 때 매니지먼트 클러스터로 로그인 하는 것 맞나요?)
 ```cmd
 $ tanzu login
 ? Select a server
@@ -30,7 +30,7 @@ tanzu cluster list
 ```cmd
 tanzu cluster list --include-management-cluster
 ```
-컨트롤 플레인을 포함한 클러스터가 이전에 배포되었을 경우, 다음과 같은 화면이 출력됩니다.
+컨트롤 플레인을 포함한 클러스터를 이전에 배포되었을 경우, 다음과 같은 화면이 출력됩니다.
 
 <img width="1490" alt="Screenshot 2023-03-08 at 1 54 10 PM" src="https://user-images.githubusercontent.com/30145956/223641030-b30ad5ab-9b91-4db5-ac86-c847da9a4a02.png">
 
@@ -47,7 +47,7 @@ cd  ~/.config/tanzu/tkg/clusterconfig
 ls -al
 ```
 
-그 중 UI installer 설치 시, 생성되었던 무작위 이름의 YAML 파일을 복제하여 새로운 이름으로 파일을 생성합니다. <자동생성파일명> 를 생성된 mgmt cluster config 파일 이름으로 대체합니다. <파일명> 에 지정하고자 하는 파일 이름을 적습니다. 
+그 중 UI installer 설치 시, 생성되었던 무작위 이름의 YAML 파일을 복제하여 새로운 이름으로 파일을 생성합니다. <자동생성파일명> 를 생성된 mgmt cluster config 파일 이름으로 변경하며, <파일명> 에 지정하고자 하는 파일 이름을 적습니다. 
 
 ```cmd
 cp  <자동생성파일명>.yaml <파일명>.yaml
@@ -57,7 +57,7 @@ cp  <자동생성파일명>.yaml <파일명>.yaml
   
 ### 2. mgmt cluster config 복제 파일 편집
 
-vi 등의 편집기로 복제하 파일을 편집합니다. 다음과 같이 변수명을 설정합니다.
+vi 등의 편집기로 복제할 파일을 편집합니다. 다음과 같이 변수명을 설정합니다.
   
 |변수명|지정값|
 |------|---|
