@@ -83,7 +83,33 @@ tanzu cluster create -f <파일명> -v 6
 <img width="969" alt="Screenshot 2023-03-08 at 1 57 34 PM (2) copy 3" src="https://user-images.githubusercontent.com/30145956/223739609-062073c9-6601-444d-b883-6a1015ad5618.png">
 <img width="970" alt="Screenshot 2023-03-08 at 2 05 21 PM (2) copy" src="https://user-images.githubusercontent.com/30145956/223739632-9defdab3-c1bc-4818-878c-ae312a475471.png">
 
-## 3. 클러스터 노드 수 Scaling 작업
+## 3. kubectl context 를 워크로드로 포인트 설정
+
+워크로드 클러스터를 생성 후 nginx 웹 서버 pod를 배포하기 위해, kubectl context를 워크로드 클러스터로 포인트하도록 설정합니다.
+생성된 워크로드 클러스터를 admin 권한을 부여하기 위해서 tanzu cluster kubeconfig get <생성된클러스터이름> --admin 을 사용합니다.
+~~~
+tanzu cluster kubeconfig get <생성된클러스터이름> --admin
+~~~
+
+<img width="1250" alt="Screenshot 2023-03-09 at 3 38 04 PM" src="https://user-images.githubusercontent.com/30145956/223940771-7c575056-b7e8-4328-828d-c59c34d2f2b3.png">
+
+kubectl config get-contexts 로 현재 context 를 확인합니다. 현재 환경에서는 'tap-build-cluster-admin@tap-build-cluster' 로 context가 지정되어 있습니다. ('*'로 표시)
+~~~
+kubectl config get-contexts
+~~~
+<img width="1250" alt="Screenshot 2023-03-09 at 1 23 11 PM" src="https://user-images.githubusercontent.com/30145956/223924919-21b6e742-427b-477f-ad05-e5aa324fc409.png">
+이후, kubectl config use-context <생성한클러스터context> 이름으로 kubectl의 context를 변경합니다. 현재 환경에서는 kubectl config use-context test-work-admin@test-work 로 context 를 설정했습니다. 
+
+다시 kubectl config get-contexts 로 확인을 하면 워크로드 클러스터로 context 가 바뀐 것을 알 수가 있습니다.
+
+~~~
+kubectl config get-contexts <생성한클러스터context>
+~~~
+
+<img width="1250" alt="Screenshot 2023-03-09 at 1 23 11 PM copy" src="https://user-images.githubusercontent.com/30145956/223925854-f7f203ba-791b-4afd-bcff-dd5ae57abfaf.png">
+
+
+## 4. 클러스터 노드 수 Scaling 작업
 클러스터 생성 후, tanzu cluster list 로 생성된 클러스터를 조회합니다. test-work 클러스터느 현재 3개의 컨트롤 플레인 수, 3개의 워커 노드 수를 가지고 있습니다.
 
 ```cmd
