@@ -9,7 +9,6 @@
 
 실습 한경에서 PuTTY 를 실행하여 Jumpbox 세션에 접속합니다. 그 뒤 로그인을 하지 않았으면, tanzu login 으로 'tap-mgmt-01' 과 같은 매니지먼트 클러스터로 로그인을 합니다. 
 
-(처음 tanzu jumpbox 접속했을 때 매니지먼트 클러스터로 로그인 하는 것 맞나요?)
 ```cmd
 $ tanzu login
 ? Select a server
