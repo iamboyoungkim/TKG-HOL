@@ -3,7 +3,7 @@
 Pod의 애플리케이션을 네트워크에 노출시키는 서비스를 생성을 한 뒤 접속하는 방법에 대해 설명합니다.
 
 ## 1. nodeport.yaml 생성, 배포
-deployment.yaml 로 생성된 nginx pod를 외부 ip 및 포트로 노출시키는 nodeport.yaml 서비스를 생성 및 배포합니다. (설명 맞나요...?)
+deployment.yaml 로 생성된 nginx pod를 외부 ip 및 포트로 노출시키는 nodeport.yaml 서비스를 생성 및 배포합니다.
 
 vi 등의 편집기로 deployment.yaml를 생성하여 다음과 같이 입력합니다.
 ~~~
