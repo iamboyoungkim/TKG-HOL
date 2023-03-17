@@ -7,8 +7,6 @@ Tanzu Kubernetes Grid Hands-On-Labs 페이지 입니다.
 |---|---|
 |TKG|1.6.1|
 
-## 0. 환경 접속
-- 환경 설명
 
 ## 1. Cluster 생성 방법 알아보기
 - config 파일 설명
