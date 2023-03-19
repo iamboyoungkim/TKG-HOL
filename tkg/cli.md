@@ -110,7 +110,7 @@ kubectl config get-contexts <생성한클러스터context>
 
 
 ## 4. 클러스터 노드 수 Scaling 작업
-클러스터 생성 후, tanzu cluster list 로 생성된 클러스터를 조회합니다. test-work 클러스터느 현재 3개의 컨트롤 플레인 수, 3개의 워커 노드 수를 가지고 있습니다.
+클러스터 생성 후, tanzu cluster list 로 생성된 클러스터를 조회합니다. test-work 클러스터는 현재 3개의 컨트롤 플레인 수, 3개의 워커 노드 수를 가지고 있습니다.
 
 ```cmd
 tanzu cluster list
